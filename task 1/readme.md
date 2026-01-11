@@ -18,22 +18,19 @@ This project implements an end-to-end Object Detection pipeline using PyTorch. I
 1. **Install Dependencies:**
    ```bash
    pip install torch torchvision opencv-python imageio tqdm
-Train the Model:
-
-Python
-
+## Train the Model:
+```bash
 # Ensure PASCAL VOC dataset is downloaded
 python train.py
-📊 Methodology
-Gradient Clipping: Used to stabilize training from random initialization.
+```
+## 📊 Methodology
+* **Gradient Clipping:** Used to stabilize training from random initialization.
 
-Data Sanitization: Custom loader filters invalid XML annotations.
+* **Data Sanitization:** Custom loader filters invalid XML annotations.
 
-Optimization: SGD with Momentum and Learning Rate Scheduling.
+* **Optimization:** SGD with Momentum and Learning Rate Scheduling.
 
-📂 Project Structure
-train.py: Complete training, evaluation, and visualization pipeline.
-
-voc_model_scratch.pth: Saved model weights (72MB).
-
-detection_results.gif: Inference demo.
+## 📂 Project Structure
+* **train.py:** Complete training, evaluation, and visualization pipeline.
+* **voc_model_scratch.pth:** Saved model weights (72MB).
+* **detection_results.gif:** Inference demo.
