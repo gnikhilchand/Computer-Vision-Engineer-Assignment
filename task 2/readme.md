@@ -31,37 +31,32 @@ dataset/
 └── val/
     ├── images/     # Validation images
     └── labels/
+```
 Defect Classes: 0. mouse_bite
 
-spur
+* spur
+* missing_hole
+* short
+* open_circuit
+* spurious_copper
 
-missing_hole
-
-short
-
-open_circuit
-
-spurious_copper
-
-🚀 Installation
+## 🚀 Installation
 Clone the repository:
 
-Bash
-
+```Bash
 git clone [https://github.com/yourusername/pcb-defect-detection.git](https://github.com/yourusername/pcb-defect-detection.git)
 cd pcb-defect-detection
-Install Dependencies:
+```
+## Install Dependencies:
 
-Bash
-
+```Bash
 pip install ultralytics opencv-python matplotlib numpy pyyaml
-🧠 Training the Model
+```
+## 🧠 Training the Model
 We recommend using YOLOv8 Small (yolov8s) with high resolution (800px) for detecting fine defects like "Shorts".
 
-Create a script train.py:
-
-Python
-
+Create a script **train.py:**
+```bash
 from ultralytics import YOLO
 
 # Load model (Use 'yolov8n.pt' for speed, 'yolov8s.pt' for accuracy)
@@ -75,10 +70,11 @@ model.train(
     batch=8,          # Adjust based on GPU memory
     name='pcb_defect_model'
 )
-🔍 Running Inference & Analysis
+```
+## 🔍 Running Inference & Analysis
 This script runs detection and applies the severity logic.
 
-Python
+```bash
 
 import cv2
 from ultralytics import YOLO
@@ -118,10 +114,12 @@ def analyze_pcb(image_path):
 
 # Run on a sample
 analyze_pcb("test_images/sample_pcb.jpg")
-📊 Results Performance
+```
+## 📊 Results Performance
 mAP@50: ~98.3% (Using YOLOv8s @ 15 Epochs)
 
 Inference Speed: ~7ms per image on Tesla T4 GPU
 
-📝 License
+## 📝 License
+
 This project is licensed under the MIT License.
